@@ -79,6 +79,7 @@ function TuringChart(handle,type,data){
 
     this.getData = function(axis) {
         var point = this.options.series[0].data[0];
+        if (!point) return null;
         var lookup = { x:0, y:1, z:2 };
         var entry = point[axis] || point[lookup[axis]];
         return entry;
