@@ -1,3 +1,7 @@
+String.prototype.contains = function(other){
+  return (this.indexOf(other) > -1);
+};
+
 function TuringList(handle,lines,format){
 
     this.element = $(handle);
