@@ -89,12 +89,12 @@ function TuringChart(handle,type,data){
         if (this.getData('x') instanceof Date) this.options.xAxis.type = 'datetime';
         if (this.getData('y') instanceof Date) this.options.yAxis.type = 'datetime';
 
-        this.options.series[0].data = this.options.series[0].data.map((point) => {
+        this.options.series[0].data = this.options.series[0].data.map(function(point){
             if (point.x) point.x = Number(point.x);
             if (point.y) point.y = Number(point.y);
             if (point.z) point.z = Number(point.z);
             return point;
-        })
+        });
     }
 
     this.draw = function(){
